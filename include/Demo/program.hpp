@@ -17,6 +17,8 @@
 
 #pragma once
 
+#include    <GLFW/glfw3.h>
+
 namespace   Demo
 {
     ///
@@ -70,5 +72,11 @@ namespace   Demo
             ///     EXIT_FAILURE otherwise.
             ///
             int     run(void);
+
+        private:
+            ///
+            /// \brief The window used to display the content.
+            ///
+            GLFWwindow  *m_window;
     };
 }

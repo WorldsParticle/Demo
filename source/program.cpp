@@ -23,16 +23,22 @@
 
 namespace   Demo
 {
-    program::program(void)
+    program::program(void) :
+        m_window(nullptr)
     {
-        // nothing to do.
+        if (!glfwInit()) {
+            throw std::runtime_error("GLFW library couldn't be initialised.");
+        }
     }
 
-    program::program(int argc, char *argv[])
+    program::program(int argc, char *argv[]) :
+        m_window(nullptr)
     {
+        if (!glfwInit()) {
+            throw std::runtime_error("GLFW library couldn't be initialised.");
+        }
         std::cout << "Program launched with : " << "\n";
-        for (int i = 0 ; i < argc ; ++i)
-        {
+        for (int i = 0 ; i < argc ; ++i) {
             std::cout << "\t" << argv[i] << "\n";
         }
         std::cout << "as arguments."<< std::endl;
@@ -40,7 +46,7 @@ namespace   Demo
 
     program::~program(void)
     {
-         // Nothing to do.
+        glfwTerminate();
     }
 
 
@@ -49,6 +55,12 @@ namespace   Demo
     program::run(void)
     {
         std::cout << "Project version : " << PROJECT_VERSION_FULL << std::endl;
+        this->m_window = glfwCreateWindow(400, 400, "Demo", nullptr, nullptr);
+        while (!glfwWindowShouldClose(this->m_window))
+        {
+            glfwSwapBuffers(this->m_window);
+            glfwPollEvents();
+        }
         return EXIT_SUCCESS;
     }
 }
