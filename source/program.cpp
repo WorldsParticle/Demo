@@ -18,10 +18,10 @@
 #include    <iostream>
 #include    <cstdlib>
 
-#include    "DEFAULT_PROJECT/program.hpp"
-#include    "DEFAULT_PROJECT/version.hpp"
+#include    "Demo/program.hpp"
+#include    "Demo/version.hpp"
 
-namespace   DEFAULT_PROJECT
+namespace   Demo
 {
     program::program(void)
     {

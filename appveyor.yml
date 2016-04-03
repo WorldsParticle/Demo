@@ -6,7 +6,7 @@ install:
     - if ["%platform%"] == ["Win32"] cmake -G "Visual Studio 14 2015" ..
     - cd ..
 build_script:
-    - msbuild "build/DEFAULT_PROJECT.sln"
+    - msbuild "build/Demo.sln"
 test_script:
     - cd build
     - ctest
@@ -24,4 +24,4 @@ matrix:
     fast_finish: false
 build:
     parallel: true                          # enable MSBuild parallel builds
-    project: "build/DEFAULT_PROJECT.sln"    # path to Visual Studio solution or project
+    project: "build/Demo.sln"    # path to Visual Studio solution or project

@@ -15,11 +15,11 @@
 // Copyright (C) 2016 Martin-Pierrat Louis (louismartinpierrat@gmail.com)
 //
 
-#include    "DEFAULT_PROJECT/program.hpp"
+#include    "Demo/program.hpp"
 
 int     main(int argc, char *argv[])
 {
-    DEFAULT_PROJECT::program    program(argc, argv);
+    Demo::program    program(argc, argv);
 
     return program.run();
 }

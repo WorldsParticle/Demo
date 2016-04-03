@@ -28,7 +28,7 @@
 
 # Project configuration files
 
-include/DEFAULT_PROJECT/Version.hpp
+include/Demo/version.hpp
 doc
 build
 

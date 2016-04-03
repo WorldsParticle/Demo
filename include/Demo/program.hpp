@@ -17,7 +17,7 @@
 
 #pragma once
 
-namespace   DEFAULT_PROJECT
+namespace   Demo
 {
     ///
     /// \brief program entry point.
