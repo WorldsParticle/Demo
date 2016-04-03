@@ -15,11 +15,12 @@
 // Copyright (C) 2016 Martin-Pierrat Louis (louismartinpierrat@gmail.com)
 //
 
-#pragma once
-
-#define DEMO_PROJECT_VERSION_MAJOR @DEMO_PROJECT_VERSION_MAJOR@
-#define DEMO_PROJECT_VERSION_MINOR @DEMO_PROJECT_VERSION_MINOR@
-#define DEMO_PROJECT_VERSION_PATCH @DEMO_PROJECT_VERSION_PATCH@
-#define DEMO_PROJECT_VERSION_EXTRA @DEMO_PROJECT_VERSION_EXTRA@
-#define DEMO_PROJECT_VERSION       "@DEMO_PROJECT_VERSION@"
-#define DEMO_PROJECT_VERSION_FULL  "@DEMO_PROJECT_VERSION_FULL@"
+namespace   Demo
+{
+    class   glfw_context
+    {
+/*        static void create_context();*/
+        //static void on_key_event();
+        /*static void register_window();*/
+    }
+}

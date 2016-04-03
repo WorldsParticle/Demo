@@ -23,20 +23,11 @@
 
 namespace   Demo
 {
-    program::program(void) :
-        m_window(nullptr)
-    {
-        if (!glfwInit()) {
-            throw std::runtime_error("GLFW library couldn't be initialised.");
-        }
-    }
 
     program::program(int argc, char *argv[]) :
-        m_window(nullptr)
+        m_window("Demo", std::make_pair(1080, 720)),
+        m_engine()
     {
-        if (!glfwInit()) {
-            throw std::runtime_error("GLFW library couldn't be initialised.");
-        }
         std::cout << "Program launched with : " << "\n";
         for (int i = 0 ; i < argc ; ++i) {
             std::cout << "\t" << argv[i] << "\n";
@@ -46,7 +37,7 @@ namespace   Demo
 
     program::~program(void)
     {
-        glfwTerminate();
+        // nothing to do.
     }
 
 
@@ -54,13 +45,15 @@ namespace   Demo
     int
     program::run(void)
     {
-        std::cout << "Project version : " << PROJECT_VERSION_FULL << std::endl;
-        this->m_window = glfwCreateWindow(400, 400, "Demo", nullptr, nullptr);
-        while (!glfwWindowShouldClose(this->m_window))
+        std::cout << "Project version : " << DEMO_PROJECT_VERSION_FULL << std::endl;
+        this->m_engine.load("./teapot.off");
+        while (this->m_window.should_close() == false)
         {
-            glfwSwapBuffers(this->m_window);
-            glfwPollEvents();
+            this->m_engine.update();
+            this->m_engine.render();
+            this->m_window.update();
         }
         return EXIT_SUCCESS;
     }
+
 }

@@ -238,7 +238,7 @@ endif(GLFW_INCLUDE_DIR)
 
 include(FindPackageHandleStandardArgs)
 
-find_package_handle_standard_args(GLFW 
+find_package_handle_standard_args(GLFW
     REQUIRED_VARS
     GLFW_INCLUDE_DIR
     GLFW_LIBRARIES

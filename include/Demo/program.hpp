@@ -17,7 +17,9 @@
 
 #pragma once
 
-#include    <GLFW/glfw3.h>
+#include    <Engine/Engine.hpp>
+
+#include    "Demo/window.hpp"
 
 namespace   Demo
 {
@@ -27,11 +29,6 @@ namespace   Demo
     class       program final
     {
         public:
-            ///
-            /// \brief Default constructor.
-            ///
-            program(void);
-
             ///
             /// \brief Constructor with program arguments.
             /// \param argc Number of arguments in the argv array.
@@ -77,6 +74,11 @@ namespace   Demo
             ///
             /// \brief The window used to display the content.
             ///
-            GLFWwindow  *m_window;
+            window  m_window;
+
+            ///
+            /// \brief The worldparticle engine instance used in the program.
+            ///
+            Engine::Core    m_engine;
     };
 }
